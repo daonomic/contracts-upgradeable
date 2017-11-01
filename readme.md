@@ -19,5 +19,5 @@ This small library has not been heavily tested. Use it on your own risk.
 ### Upgradeable overview
 
 - Upgradeable has some checks to ensure next version is compatible with previous.
-- See "[Upgradeable](contracts/upgradeable/Upgradeable.sol).verifyTargetState". It uses delegatecall to check if next contract version stores "target" storage variable in the same slot
-- Also, you'd better implement your own version of "verifyState" function. It can check if other storage variables are in the same slots. See "test/contracts/Target.sol" for example
+- See [Upgradeable](contracts/upgradeable/Upgradeable.sol).verifyTargetState. It uses delegatecall to check if next contract version stores "target" storage variable in the same slot
+- Also, you'd better implement your own version of "verifyState" function. It can check if other storage variables are in the same slots. See [test/contracts/Target.sol] for example
