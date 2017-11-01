@@ -16,6 +16,7 @@ Library has not been heavily tested. Use it on your own risk. Do it only if you 
 
 - The first storage slot in the contract will be used to store the address of the target contract
 - Additionally, when you upgrade a contract that has already stored data on the blockchain, you will need to be sure not to change the organization of your contract's storage. You can safely add new storage variables, but do not delete or re-order existing ones. It may also be risky to change the version of the Solidity compiler used, as there is no guarantee the storage layout will remain the same
+- Take a look at [upgradeable.js](test/upgradeable.js) to see some examples
 
 ### Upgradeable overview
 
