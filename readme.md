@@ -1,10 +1,10 @@
 ## Upgradeable contracts
 
-It does what it says: you can have upgradeable contracts for reasonable price (about 1100 gas per call. it depends on returndatasize and returndatasize). Dispatcher uses new returndatasize and returndatacopy opcodes. So it won't work in pre-byzantium network.
+Small library providing upgradeable smart contracts. You can have upgradeable contracts for reasonable price (about 1100 gas per call. it depends on data size). [Dispatcher](contracts/upgradeable/Dispatcher.sol) uses new returndatasize and returndatacopy opcodes. So it won't work in pre-byzantium network.
 
 ### Disclaimer
 
-This small library has not been heavily tested. Use it on your own risk.
+Library has not been heavily tested. Use it on your own risk. Do it only if you understand how data is stored.
 
 ### Basic Usage
 
@@ -21,3 +21,4 @@ This small library has not been heavily tested. Use it on your own risk.
 - Upgradeable has some checks to ensure next version is compatible with previous.
 - See [Upgradeable](contracts/upgradeable/Upgradeable.sol).verifyTargetState. It uses delegatecall to check if next contract version stores "target" storage variable in the same slot
 - Also, you'd better implement your own version of "verifyState" function. It can check if other storage variables are in the same slots. See [Target](test/contracts/Target.sol) for example. [NotVerifyingTarget](test/contracts/NotVerifyingTarget.sol) doesn't have this check. This leads to data corruption. See [upgradeable.js](test/upgradeable.js) "but it'll let upgrade if no check present" test
+- Implement checkAdmin function. Usually you can check if msg.sender is some address responsible for upgrading contracts
