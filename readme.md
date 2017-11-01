@@ -10,6 +10,7 @@ Library has not been heavily tested. Use it on your own risk. Do it only if you 
 
 1. Deploy target contract (You can use Upgradeable as base contract, it has some useful functions)
 2. Deploy Dispatcher contract with address of the target as constructor argument.
+3. You can use dispatcher's address as static address even if you want to switch to other implementation in future.
 
 ### Writing compatible contracts
 
