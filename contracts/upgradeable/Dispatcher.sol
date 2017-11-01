@@ -1,10 +1,8 @@
 pragma solidity 0.4.15;
 
 
-import "./Upgradeable.sol";
-
-
-contract Dispatcher is Upgradeable {
+contract Dispatcher {
+    address public target;
 
     function Dispatcher(address _target){
         target = _target;

@@ -1,5 +1,5 @@
 var Dispatcher = artifacts.require("./upgradeable/Dispatcher.sol");
-var Target = artifacts.require("./Target.sol");
+var Target = artifacts.require("./contracts/Target.sol");
 
 function randomString(length, chars) {
     var result = '';
@@ -45,5 +45,6 @@ contract('Dispatcher', function(accounts) {
     var directGas = (await target.setIntState(testValue)).receipt.gasUsed;
 
     console.log("gasUsage: direct=" + directGas + " dispatched=" + dispatchedGas + " diff=" + (dispatchedGas - directGas) + " (" + 100 * (dispatchedGas - directGas) / directGas + "%)");
+    assert.isBelow(dispatchedGas - directGas, 1100);
   });
 });

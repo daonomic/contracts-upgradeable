@@ -1,10 +1,7 @@
 pragma solidity 0.4.15;
 
 
-import "../contracts/upgradeable/Upgradeable.sol";
-
-
-contract Target is Upgradeable {
+contract TargetCommon {
     string public stringState;
     uint256 public intState;
 
