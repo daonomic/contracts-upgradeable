@@ -1,4 +1,4 @@
-pragma solidity 0.4.15;
+pragma solidity ^0.4.15;
 
 
 contract Upgradeable {
@@ -13,20 +13,27 @@ contract Upgradeable {
     function checkAdmin() internal;
 
     function upgrade(address _target) onlyAdmin public {
+        verifyTargetState(_target);
+        verifyState(_target);
         target = _target;
-        bytes4 targetCall = bytes4(keccak256("target()"));
-        address testTarget;
-        assembly {
-            mstore(0x0, targetCall)
-            let retval := delegatecall(gas, _target, 0x0, 4, 0x0, 32)
-            testTarget := mload(0x0)
-        }
         EventUpgrade(_target, msg.sender);
-        assert(testTarget == _target);
-        assertCorrectUpgrade();
     }
 
-    function assertCorrectUpgrade() internal {
+    function verifyTargetState(address testTarget) private {
+        require(address(delegateGet(testTarget, "target()")) == target);
+    }
 
+    function verifyState(address testTarget) internal {
+
+    }
+
+    function delegateGet(address testTarget, string signature) internal returns (bytes32 result) {
+        bytes4 targetCall = bytes4(keccak256(signature));
+        assembly {
+            let free := mload(0x40)
+            mstore(free, targetCall)
+            let retVal := delegatecall(gas, testTarget, free, 4, free, 32)
+            result := mload(free)
+        }
     }
 }

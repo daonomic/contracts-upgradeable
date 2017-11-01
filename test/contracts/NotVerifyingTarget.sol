@@ -5,12 +5,12 @@ import "./TargetCommon.sol";
 import "../../contracts/upgradeable/Upgradeable.sol";
 
 
-contract Target is Upgradeable, TargetCommon {
+contract NotVerifyingTarget is Upgradeable, TargetCommon {
     function checkAdmin() internal {
 
     }
 
     function verifyState(address testTarget) internal {
-        require(uint256(delegateGet(testTarget, "intState()")) == intState);
+
     }
 }
