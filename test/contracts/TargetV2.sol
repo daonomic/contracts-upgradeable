@@ -2,7 +2,7 @@ pragma solidity ^0.4.15;
 
 
 import "./TargetCommon.sol";
-import "../../contracts/upgradeable/Upgradeable.sol";
+import "../../contracts/Upgradeable.sol";
 
 
 contract TargetV2 is Upgradeable, TargetCommon {

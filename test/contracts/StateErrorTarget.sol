@@ -1,7 +1,7 @@
 pragma solidity ^0.4.15;
 
 
-import "../../contracts/upgradeable/Upgradeable.sol";
+import "../../contracts/Upgradeable.sol";
 
 
 contract StateErrorTarget is Upgradeable {

@@ -2,9 +2,9 @@ pragma solidity ^0.4.15;
 
 
 contract Dispatcher {
-    address public target;
+    address target;
 
-    function Dispatcher(address _target){
+    function Dispatcher(address _target) public {
         target = _target;
     }
 

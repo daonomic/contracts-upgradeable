@@ -3,7 +3,7 @@ var TargetV2 = artifacts.require("./contracts/TargetV2.sol");
 var ErrorTarget = artifacts.require("./contracts/ErrorTarget.sol");
 var StateErrorTarget = artifacts.require("./contracts/StateErrorTarget.sol");
 var NotVerifyingTarget = artifacts.require("./contracts/NotVerifyingTarget.sol");
-var Dispatcher = artifacts.require("./contracts/upgradeable/Dispatcher.sol");
+var Dispatcher = artifacts.require("./upgradeable/Dispatcher.sol");
 
 module.exports = function(deployer) {
   deployer.deploy(TargetV2);
