@@ -1,0 +1,24 @@
+{
+  "name": "daonomic-upgradeable",
+  "version": "0.0.1",
+  "description": "Base for upgradeable smart contracts",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0v1se/contracts-upgradeable.git"
+  },
+  "keywords": [
+    "ethereum"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0v1se/contracts-upgradeable/issues"
+  },
+  "homepage": "https://github.com/0v1se/contracts-upgradeable"
+}
