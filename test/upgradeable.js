@@ -5,7 +5,7 @@ var ErrorTarget = artifacts.require("./contracts/ErrorTarget.sol");
 var StateErrorTarget = artifacts.require("./contracts/StateErrorTarget.sol");
 var NotVerifyingTarget = artifacts.require("./contracts/NotVerifyingTarget.sol");
 
-const expectThrow = require('./helpers/expectThrow.js')
+const expectThrow = require('daonomic-tests').expectThrow;
 
 contract('Upgradeable', function(accounts) {
 

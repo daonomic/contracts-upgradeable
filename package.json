@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/0v1se/contracts-upgradeable/issues"
   },
-  "homepage": "https://github.com/0v1se/contracts-upgradeable"
+  "homepage": "https://github.com/0v1se/contracts-upgradeable",
+  "devDependencies": {
+    "daonomic-tests": "0.0.2"
+  }
 }
