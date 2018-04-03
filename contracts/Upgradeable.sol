@@ -1,4 +1,4 @@
-pragma solidity ^0.4.15;
+pragma solidity ^0.4.21;
 
 
 contract Upgradeable {
@@ -16,7 +16,7 @@ contract Upgradeable {
         verifyTargetState(_target);
         verifyState(_target);
         target = _target;
-        EventUpgrade(_target, msg.sender);
+        emit EventUpgrade(_target, msg.sender);
     }
 
     function verifyTargetState(address testTarget) private {
